@@ -24,6 +24,15 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: './home/home.module#HomePageModule'
+  },
+  {
+    path: 'filmes',
+    loadChildren: './filmes/filmes.module#FilmesPageModule'
+  },
+  {
+    path: 'filmes-detalhe/:id',
+    loadChildren:
+      './filmes/filmes-detalhe/filmes-detalhe.module#FilmesDetalhePageModule'
   }
 ];
 
