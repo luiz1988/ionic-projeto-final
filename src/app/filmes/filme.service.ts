@@ -34,8 +34,7 @@ export class FilmeService {
   }
 
   getFilmesById(id) {
-    debugger
-    return this.http.get(`${this.URL}`);
+    return this.http.get(`${this.URL}?i=${id}&plot=full&apikey=${this.chaveAPI}`);
   }
 
 }
