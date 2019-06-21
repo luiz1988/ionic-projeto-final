@@ -6,16 +6,15 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class FilmeService {
+export class CachorroService {
 
-  URL = 'http://www.omdbapi.com/';
+  URL = 'https://swapi.co/api/';
   chaveAPI = '7e6e65ed';
 
   constructor(private http: HttpClient) { }
 
   //Chamada sincrona
   consultaFilmes(titulo: string) {
-    debugger
     this.http.get<any>(`
       ${this.URL}?s=${encodeURI(titulo)}&apikey=${this.chaveAPI}
     `).subscribe(
@@ -28,14 +27,16 @@ export class FilmeService {
 
   //Chamada assincrona
   consultaFilmesAssincrono(titulo: string): Observable<any> {
+    debugger
     return this.http.get<any>(`
-        ${this.URL}?s=${encodeURI(titulo)}&apikey=${this.chaveAPI}`)
-        .pipe(map(results => results['Search']));
+        ${this.URL}${encodeURI(titulo)}`)
   }
 
   getFilmesById(id) {
     debugger
-    return this.http.get(`${this.URL}`);
+    const urlStarWars = "https://swapi.co/api/species/"
+    const id = id.replace(/\D/g,'')
+    return this.http.get(`${urlStarWars}${id}`);
   }
 
 }

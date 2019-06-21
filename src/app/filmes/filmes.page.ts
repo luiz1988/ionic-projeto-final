@@ -18,6 +18,7 @@ export class FilmesPage implements OnInit {
   }
 
   consultaFilmesAssincrono(){
+    debugger
     this.resultado = this.filmesService.consultaFilmesAssincrono(this.termoDeBusca);
     console.log(this.resultado);
   }

@@ -33,6 +33,14 @@ const routes: Routes = [
     path: 'filmes-detalhe/:id',
     loadChildren:
       './filmes/filmes-detalhe/filmes-detalhe.module#FilmesDetalhePageModule'
+  },
+  {
+     path: 'cachorros',
+     loadChildren: './cachorros/cachorros.module#CachorrosPageModule' 
+  },
+  { 
+    path: 'cachorro-detalhe/:id', 
+    loadChildren: './cachorros/cachorro-detalhe/cachorro-detalhe.module#CachorroDetalhePageModule' 
   }
 ];
 

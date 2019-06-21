@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>The Star War-detalhe</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <ion-card *ngIf="detalhes">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-label>{{ detalhes.name }}</ion-label>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>Nome: {{ detalhes.name }} </ion-item>
+      <ion-item>Altura: {{ detalhes.average_height }} </ion-item>
+      <ion-item>designação: {{ detalhes.designation}} </ion-item>
+      <ion-item>Classificação: {{ detalhes.classification}} </ion-item>
+      <ion-item>Cor da Pele: {{ detalhes.skin_colors}} </ion-item>
+      <ion-item>Cor da Olho: {{ detalhes.eye_colors}} </ion-item>
+      <ion-item>língua: {{ detalhes.language}} </ion-item>
+      <ion-item>Data de Criação: {{ detalhes.created}} </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button shape="round" expand="block" [routerLink]="['/cachorros']" >Nova Consulta</ion-button>
+</ion-content>
