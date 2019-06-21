@@ -35,8 +35,8 @@ export class CachorroService {
   getFilmesById(id) {
     debugger
     const urlStarWars = "https://swapi.co/api/species/"
-    const id = id.replace(/\D/g,'')
-    return this.http.get(`${urlStarWars}${id}`);
+    const novoId = id.replace(/\D/g,'')
+    return this.http.get(`${urlStarWars}${novoId}`);
   }
 
 }
