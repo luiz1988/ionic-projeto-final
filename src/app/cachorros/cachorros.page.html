@@ -6,13 +6,10 @@
 
 <ion-content>
 
-  <ion-searchbar debounce="1500" [(ngModel)]="termoDeBusca" (ionChange)="consultaFilmesAssincrono($event)"></ion-searchbar>
+  <ion-searchbar debounce="500" [(ngModel)]="termoDeBusca" (ionChange)="consultaFilmesAssincrono($event)"></ion-searchbar>
 
   <ion-list>
     <ion-item button *ngFor="let item of resultado.results" [routerLink]="['/cachorro-detalhe',item.url]">
-      <!-- <ion-avatar slot="start">
-        <img [src]="item.Poster" *ngIf="item.Poster != 'N/A'">
-      </ion-avatar> -->
       <ion-label text-wrap>
         <h3> {{item.name}} </h3>
       </ion-label>

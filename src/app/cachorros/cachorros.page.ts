@@ -11,14 +11,14 @@ export class CachorrosPage implements OnInit {
   resultado: any;
   termoDeBusca: string;
 
-  constructor(private filmesService: CachorroService) { }
+  constructor(private cachorroService: CachorroService) { }
 
   ngOnInit() {
     //this.filmesService.consultaFilmes('The Flash');
   }
 
   async consultaFilmesAssincrono(): Promise<any>{
-    this.resultado = await this.filmesService.consultaFilmesAssincrono(this.termoDeBusca).toPromise();
+    this.resultado = await this.cachorroService.consultaFilmesAssincrono(this.termoDeBusca).toPromise();
     console.log(this.resultado);
   }
 

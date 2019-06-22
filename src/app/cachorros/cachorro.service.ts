@@ -27,13 +27,11 @@ export class CachorroService {
 
   //Chamada assincrona
   consultaFilmesAssincrono(titulo: string): Observable<any> {
-    debugger
     return this.http.get<any>(`
         ${this.URL}${encodeURI(titulo)}`)
   }
 
   getFilmesById(id) {
-    debugger
     const urlStarWars = "https://swapi.co/api/species/"
     const novoId = id.replace(/\D/g,'')
     return this.http.get(`${urlStarWars}${novoId}`);

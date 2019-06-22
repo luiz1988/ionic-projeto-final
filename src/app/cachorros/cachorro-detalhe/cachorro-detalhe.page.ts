@@ -11,7 +11,7 @@ export class CachorroDetalhePage implements OnInit {
 
   detalhes = null;
 
-  constructor(private activatedRoute: ActivatedRoute, private filmeService: CachorroService) { }
+  constructor(private activatedRoute: ActivatedRoute, private cachorroService: CachorroService) { }
 
   ngOnInit() {
     debugger
@@ -19,7 +19,7 @@ export class CachorroDetalhePage implements OnInit {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
 
     // busca na API os dados do id
-    this.filmeService.getFilmesById(id).subscribe(result => {
+    this.cachorroService.getFilmesById(id).subscribe(result => {
       this.detalhes = result;
       console.log(this.detalhes);
     });
